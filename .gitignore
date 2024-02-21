@@ -12,4 +12,6 @@ target/
 *.ipr
 jobs-rabbit/.idea
 jobs-rabbit/src/main/resources/application.properties
+messageConsumer/.idea
+messageConsumer/src/main/resources/application.properties
 

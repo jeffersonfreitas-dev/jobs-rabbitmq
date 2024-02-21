@@ -17,8 +17,7 @@ public class MessageController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public MessageDTO create(@RequestBody MessageDTO message) {
+    public void create(@RequestBody MessageDTO message) {
         service.sendMessage(message);
-        return new MessageDTO();
     }
 }
