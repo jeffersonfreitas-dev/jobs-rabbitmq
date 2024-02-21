@@ -1,6 +1,6 @@
 package dev.jeffersonfreitas.api.controller;
 
-import dev.jeffersonfreitas.api.dto.MessageDTO;
+import br.com.jeffersonfreitas.dto.MessageDTO;
 import dev.jeffersonfreitas.api.service.MessageService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

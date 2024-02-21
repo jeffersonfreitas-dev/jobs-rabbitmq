@@ -1,5 +1,6 @@
 package dev.jeffersonfreitas.api.connections;
 
+import br.com.jeffersonfreitas.utils.Constants;
 import jakarta.annotation.PostConstruct;
 import org.springframework.amqp.core.AmqpAdmin;
 import org.springframework.amqp.core.Binding;
@@ -31,17 +32,13 @@ public class RabbitMqConnection {
 
     @PostConstruct
     private void createQueue(){
-        Queue stockQueue = this.queue("ESTOQUE_QUEUE");
-        Queue priceQueue = this.queue("PRECO_QUEUE");
+        Queue messageQueue = this.queue(Constants.MESSAGE_QUEUE);
 
         DirectExchange exchange = this.directExchange();
-        Binding bindStock = this.relationshipBinding(stockQueue, exchange);
-        Binding bindPrice = this.relationshipBinding(priceQueue, exchange);
+        Binding messageBind = this.relationshipBinding(messageQueue, exchange);
 
-        this.amqpAdmin.declareQueue(stockQueue);
-        this.amqpAdmin.declareQueue(priceQueue);
+        this.amqpAdmin.declareQueue(messageQueue);
         this.amqpAdmin.declareExchange(exchange);
-        this.amqpAdmin.declareBinding(bindStock);
-        this.amqpAdmin.declareBinding(bindPrice);
+        this.amqpAdmin.declareBinding(messageBind);
     }
 }

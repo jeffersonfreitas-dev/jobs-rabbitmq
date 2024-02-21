@@ -1,7 +1,8 @@
 package dev.jeffersonfreitas.api.service;
 
+import br.com.jeffersonfreitas.dto.MessageDTO;
+import br.com.jeffersonfreitas.utils.Constants;
 import dev.jeffersonfreitas.api.connections.MessageProducer;
-import dev.jeffersonfreitas.api.dto.MessageDTO;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -14,6 +15,6 @@ public class MessageService {
     }
 
     public void sendMessage(MessageDTO message) {
-        this.messageProducer.sendMessage("ESTOQUE_QUEUE", message);
+        this.messageProducer.sendMessage(Constants.MESSAGE_QUEUE, message);
     }
 }

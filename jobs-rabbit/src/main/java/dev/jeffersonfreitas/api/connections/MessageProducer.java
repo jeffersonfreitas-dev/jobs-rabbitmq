@@ -1,6 +1,6 @@
 package dev.jeffersonfreitas.api.connections;
 
-import dev.jeffersonfreitas.api.dto.MessageDTO;
+import br.com.jeffersonfreitas.dto.MessageDTO;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
 
